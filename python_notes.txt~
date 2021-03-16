@@ -1,0 +1,71 @@
+>>to format a string we use the method format()
+>>to select a portion of a string we use the syntaxe:
+ourStringVar[begining:end].
+
+/*************** listes and tuples: **********************/
+
+-we create a list by : my_list = list()
+-empty list : my_list = []
+-append an element to end of the list : list.append(element)
+-insert an elt at a certain index: list.insert(index, element)
+-concatenate 2 listes : list1.extend(list2)
+-delete a list : del my_list
+	    or : my_list.remove(element) // element is not the element's index
+		remove eleminates just the 1st occurence of element
+-the method enumerate used to show the content of a list :
+	for i, elt in enumerate(my_list):
+		print("in {0} we find elmnt {1}".format(i, elt))
+-tuples are unmodifiable lists, once created we can not modify them
+	my_tuple = (4,2,...) //we use () to create a tuple
+-in python we can define a function returning not only one value but many of
+them, example:
+	def decompose(integer, dividedBy)
+		pe =  integer // dividedBy
+		pd = integer % dividedBy
+		return pe, pd
+
+-list comprehensions:
+list = [1,3,5],	[i**2 for i in list] ==> [1, 9, 25] // simple modification of
+the list using list comprehensions syntax, it returns the modified list
+===> we can also filtrate the list below using the syntax:
+	[i for i in list if i%2 == 0 ] // here we select only prime numbers
+
+/*******  Dictionaries ***********/
+
+we declare a dictionary using the class dict: my_dict = dict()
+we create an empty dictionary by : my_dict = {}
+we fill the dictionary by keys and values: my_dict[key] = value
+example:	my_dict["password"] = 'this is my pwd'
+		my_dict = {"key1": value1, "key2": value2, ..., "keyn":valuen}
+{"value1", "value2",....} this is a set not a dictionary
+it can not contain the same object twice
+ > del my_dict[key]
+or
+ > my_dict.pop(key) : this method delete the key and returns its value.
+- we put named parameters in dictionaries, instead of we put unnamed
+  parameteres in lists we use :
+	my_function(*unnamedParams, **namedParams)
+	>1st parameter represents a list of unnamed parameters
+	>2nd parameter represents a dictionary of named parameters
+
+/**************************  FILES AND DIRECTORIES *************************\
+
+-to change the working directory in python interpreter :
+	>>>import os
+	>>>os.chdir([PATH])
+	>>>os.getcwd() // gets the current working directory
+-To open a new file we use :
+	my_file = open([filePath], [mode])
+		>> mode: "r" read only mode
+			 "w" write only mode
+			 "a" insert (append in end of file) mode
+			 "b" binary mode (useful when saving our objects)
+		>> filePath : the absolute or relative path of our file
+-To read the file content : we use method read(), it returns the hole content
+of our file :  content = my_file.read()
+-To write we use : my_file.write("kdjifjeljajej") 
+// returns nb or written characters, it only accepts strings as parameter
+
+- with open("file", "mode") as my_file: ........
+	is used to close automatically the file if an exception raises or not
+	it s always recommended to use this syntax to avoid mistakes
